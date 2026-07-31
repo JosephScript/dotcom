@@ -14,56 +14,39 @@ $ pnpm run dev
 
 ## Deployment
 
-This site is automatically deployed to [Cloudflare Pages](https://pages.cloudflare.com/) whenever code is pushed to the `main` branch.
+This site deploys to Cloudflare Workers as a static-assets Worker, configured in `wrangler.jsonc`. It's a fully static Astro build (`output: 'static'`) with no server-side rendering yet — `wrangler.jsonc` has no `main` entrypoint, just an `assets` block pointing at `dist/`. SSR can be added later for specific routes by installing the `@astrojs/cloudflare` adapter and giving `wrangler.jsonc` a `main` script, without needing to migrate off Workers.
 
 ### How it works
 
-1. **GitHub Integration**: The repository is connected to Cloudflare Pages through the Cloudflare dashboard. When you push to the `main` branch, Cloudflare Pages detects the change via webhook.
-
-2. **Build Process**: Cloudflare Pages automatically:
-   - Clones the repository
-   - Installs dependencies using `pnpm` (detected automatically from `pnpm-lock.yaml`)
-   - Runs the build command: `pnpm run build`
-   - The Astro build process generates a static site in the `dist` directory.
-
-3. **Deployment**: The contents of the `dist` directory are deployed to Cloudflare's global CDN, making the site available worldwide.
-
-### Build Configuration
-
-The project is configured for static site generation:
-- **Build command**: `pnpm run build`
-- **Build output directory**: `dist`
-- **Node version**: 24.x (specified in `.nvmrc` and `package.json` engines)
-
-These settings are configured in the Cloudflare Pages dashboard.
+1. The Cloudflare Worker is connected to this GitHub repository via Workers Builds (Cloudflare's git-integration CI/CD for Workers, configured in the Cloudflare dashboard).
+2. On push to `main`, Cloudflare clones the repo, installs dependencies with `pnpm`, runs `pnpm run build` to generate the static site in `dist/`, then runs `wrangler deploy` to publish it.
+3. Static assets are served from Cloudflare's global network.
 
 ### Manual Deployment
 
-If you need to deploy manually or test the build locally:
-
 ```bash
-# Build the static site
-$ pnpm run build
+# Build and deploy in one step
+$ pnpm run deploy
 
-# The output will be in the `dist` directory
-# You can preview it locally with a static file server
+# Or separately:
+$ pnpm run build
+$ npx wrangler deploy
+
+# Validate the wrangler config without actually deploying:
+$ npx wrangler deploy --dry-run
 ```
 
-### Setting up Cloudflare Pages (One-time setup)
+Deploying manually requires being logged in via `npx wrangler login`, or a `CLOUDFLARE_API_TOKEN` environment variable.
 
-If you need to set up a new Cloudflare Pages project:
+### Setting up the Worker (one-time setup)
 
-1. Go to the [Cloudflare Dashboard](https://dash.cloudflare.com/)
-2. Navigate to **Pages** → **Create a project**
-3. Connect your GitHub repository
-4. Configure the build settings:
-   - **Framework preset**: Astro
-   - **Build command**: `pnpm run build`
-   - **Build output directory**: `dist`
-   - **Root directory**: `/` (leave as default)
-5. Save and deploy
+If you need to reconnect this to a Cloudflare account from scratch:
 
-Once configured, all future pushes to `main` will trigger automatic deployments.
+1. Go to the [Cloudflare Dashboard](https://dash.cloudflare.com/) → **Workers & Pages** → **Create** → **Import a repository**
+2. Connect this GitHub repo
+3. Build command: `pnpm run build`
+4. Cloudflare will detect `wrangler.jsonc` and deploy accordingly
+5. Attach the custom domain under the Worker's **Settings → Domains & Routes**
 
 ## Dependency Scanning
 

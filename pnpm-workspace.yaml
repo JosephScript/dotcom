@@ -1,7 +1,9 @@
 onlyBuiltDependencies:
   - '@biomejs/biome'
   - esbuild
+  - workerd
 
 allowBuilds:
   '@biomejs/biome': true
   esbuild: true
+  workerd: true
