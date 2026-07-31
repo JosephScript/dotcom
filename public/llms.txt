@@ -1,0 +1,9 @@
+# JosephScript
+
+> Joseph Szczesniak's personal site: a full-stack engineer working across CI/CD, test automation, ML workflows, and AI engineering, plus open source, an indie game, and fractional CTO consulting.
+
+## Pages
+
+- [About](https://josephscript.com/about): Background, current focus, and a neofetch-style summary of the stack and tools in use.
+- [Projects](https://josephscript.com/projects): Actively maintained open-source projects, pulled live from GitHub.
+- [Resume](https://josephscript.com/about/resume): Full work history, technical skills, and publications.
