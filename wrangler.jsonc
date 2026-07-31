@@ -1,0 +1,11 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "josephscript",
+  "compatibility_date": "2026-07-31",
+  // Fully static site for now — no Worker entrypoint. Add a "main" script
+  // (and switch the Astro adapter to output: 'server' for the routes that
+  // need it) if/when a page needs server-side rendering.
+  "assets": {
+    "directory": "./dist"
+  }
+}
