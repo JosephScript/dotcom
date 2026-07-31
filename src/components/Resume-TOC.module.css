@@ -1,0 +1,16 @@
+.tocList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+.tocList a::before {
+  content: "#";
+  color: var(--accent-terminal);
+  margin-right: 4px;
+}

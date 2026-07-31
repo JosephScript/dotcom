@@ -1,0 +1,5 @@
+# Run security audit first (fail fast on vulnerabilities)
+npm run audit
+
+# Run lint-staged (Biome formatting and linting)
+npm exec lint-staged

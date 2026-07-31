@@ -1,0 +1,17 @@
+---
+interface Props {
+  command: string
+}
+const { command } = Astro.props
+---
+<div class="terminal">
+  <div class="terminal-titlebar" aria-hidden="true">
+    <span class="terminal-dot"></span>
+    <span class="terminal-dot"></span>
+    <span class="terminal-dot"></span>
+  </div>
+  <div class="terminal-body">
+    <p class="terminal-line"><span class="terminal-glyph">$</span> {command}</p>
+    <slot />
+  </div>
+</div>

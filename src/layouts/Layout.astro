@@ -1,0 +1,79 @@
+---
+import { Footer } from '../components/Footer'
+import { Header } from '../components/Header'
+import 'normalize.css'
+import '../styles/vars.css'
+import '../styles/global.css'
+import '../styles/fonts.css'
+
+export const TITLE = 'JosephScript: full-stack engineering, CI/CD, and AI/ML'
+export const DESCRIPTION =
+  'Full-stack engineer across CI/CD, test automation, ML workflows, and AI engineering. Also an open-source contributor, indie game developer, and fractional CTO for early-stage teams.'
+---
+<html lang="en" class="no-fouc" style="background-color: black;">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#0b0c0e" />
+    <meta name="description" content={DESCRIPTION} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={TITLE} />
+    <meta property="og:description" content={DESCRIPTION} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={TITLE} />
+    <meta name="twitter:description" content={DESCRIPTION} />
+    <title>{TITLE}</title>
+    <noscript>
+      <style>
+        .reveal-on-boot {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      </style>
+    </noscript>
+  </head>
+  <body>
+    <div class="wrapper">
+      <main>
+        <hr />
+        <Header client:load pathname={Astro.url.pathname} />
+
+        <article>
+          <slot />
+        </article>
+        <Footer client:load />
+      </main>
+    </div>
+    <script>
+      document.documentElement.className = document.documentElement.className.replace('no-fouc', 'fouc');
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  .wrapper,
+  main {
+    min-height: 100vh;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+  hr {
+    width: 100%;
+    background-color: var(--js-color);
+    border: none;
+    height: 4px;
+    line-height: 4px;
+    margin-bottom: 8px;
+    margin-top: 0;
+  }
+  article {
+    flex-grow: 1;
+  }
+</style>

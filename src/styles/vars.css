@@ -1,0 +1,33 @@
+:root {
+  /* brand accent — user-changeable (see Header logo click), defaults to JS-logo yellow */
+  --js-color: #f7df1e;
+  --accent-terminal: #5fd98a;
+
+  /* surface */
+  --bg: #0b0c0e;
+  --surface: #16181c;
+  --surface-border: #2a2d33;
+
+  /* text */
+  --text: #edede6;
+  --text-muted: #9096a0;
+
+  /* type */
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas,
+    monospace;
+  --font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+
+  --step-0: 1rem;
+  --step-1: 1.25rem;
+  --step-2: 1.75rem;
+  --step-3: 2.5rem;
+  --step-4: 3.5rem;
+
+  /* layout */
+  --max-width: 1080px;
+  --radius: 10px;
+
+  /* motion */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}

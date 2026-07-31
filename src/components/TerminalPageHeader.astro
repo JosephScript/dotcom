@@ -1,0 +1,12 @@
+---
+import TerminalBlock from './TerminalBlock.astro'
+
+interface Props {
+  command: string
+  title: string
+}
+const { command, title } = Astro.props
+---
+<TerminalBlock command={command}>
+  <h1>{title}</h1>
+</TerminalBlock>

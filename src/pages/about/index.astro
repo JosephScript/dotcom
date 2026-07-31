@@ -1,0 +1,70 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import TerminalBlock from '../../components/TerminalBlock.astro'
+import { AboutMe } from '../../components/AboutMe'
+import { linkedin, bluesky } from '../../components/URLs'
+import { getRepoCount } from '../../lib/github'
+
+const repoCount = await getRepoCount()
+---
+<Layout>
+  <div class="page-inner">
+    <section class="block">
+      <TerminalBlock command="cat about.md --full">
+        <h1>JosephScript, by Joseph Andrew Szczesniak</h1>
+        <p>
+          I've personally architected and built everything from small
+          intranet sites to enterprise-level global solutions, with
+          experience across big data, machine learning, data analysis,
+          mobile, and modern web applications.
+        </p>
+        <p>
+          I've helped organizations of all sizes (startups, scale-ups, and
+          fintech companies operating under real compliance pressure) make
+          better technology decisions. I'm an active contributor to the
+          open-source community, and I helped build the curriculum for a new
+          approach to development education at Prime Digital Academy.
+        </p>
+        <p>
+          Right now I'm splitting my time between shipping small open-source
+          tools, consulting as a fractional CTO, and building an indie game
+          on nights and weekends.
+        </p>
+      </TerminalBlock>
+    </section>
+
+    <section class="block">
+      <TerminalBlock command="cat contact.md">
+        <p>
+          Feel free to reach me on
+          {' '}<a href={bluesky} target="_blank" rel="noreferrer">BlueSky</a>{' '}
+          or
+          {' '}<a href={linkedin} target="_blank" rel="noreferrer">LinkedIn</a>.
+        </p>
+      </TerminalBlock>
+    </section>
+
+    <section class="block">
+      <TerminalBlock command="cat about.md">
+        <AboutMe client:load repoCount={repoCount} />
+      </TerminalBlock>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .page-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 8px;
+  }
+  .block {
+    margin-bottom: 32px;
+  }
+  .block :global(p) {
+    margin: 0;
+  }
+  .block :global(p + p) {
+    margin-top: 12px;
+  }
+</style>

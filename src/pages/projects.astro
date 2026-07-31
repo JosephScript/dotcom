@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro'
+import TerminalPageHeader from '../components/TerminalPageHeader.astro'
+import ProjectCard from '../components/ProjectCard.astro'
+import { getFeaturedRepos } from '../lib/github'
+import { github } from '../components/URLs'
+
+const repos = await getFeaturedRepos(12)
+---
+<Layout>
+  <div class="article-inner">
+    <TerminalPageHeader command="ls -la ~/projects --sort=stars" title="Projects" />
+
+    {repos.length > 0 ? (
+      <div class="project-grid">
+        {repos.map((repo) => <ProjectCard repo={repo} />)}
+      </div>
+    ) : (
+      <p>
+        Couldn't reach the GitHub API at build time. See everything directly
+        on <a href={github} target="_blank" rel="noreferrer">GitHub</a> instead.
+      </p>
+    )}
+
+    <p class="footnote">
+      This list is pulled live from GitHub and only shows my non-fork, active
+      repos. For the long tail of old bootcamp exercises and forks, see the
+      {' '}<a href={github} target="_blank" rel="noreferrer">full profile</a>.
+    </p>
+  </div>
+</Layout>
+
+<style>
+  .article-inner {
+    max-width: var(--max-width);
+    margin: 0 auto 72px auto;
+    padding: 0 8px;
+  }
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .footnote {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+</style>

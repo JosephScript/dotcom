@@ -1,0 +1,40 @@
+export const Logo = ({ height = 630, width = 630 }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    version="1.1"
+    viewBox="0 0 100 100"
+    id="Logo"
+    height={height}
+    width={width}
+    aria-hidden="true"
+  >
+    <rect
+      id="Logo-background"
+      x="0"
+      y="0"
+      width="100"
+      height="100"
+      fill="var(--js-color)"
+    />
+    <text
+      id="Logo-glyph"
+      x="44"
+      y="62"
+      textAnchor="middle"
+      fontFamily="'IBM Plex Mono', ui-monospace, monospace"
+      fontWeight="700"
+      fontSize="52"
+      fill="#15161b"
+    >
+      JS
+    </text>
+    <rect
+      id="Logo-cursor"
+      x="16"
+      y="78"
+      width="68"
+      height="11"
+      fill="#15161b"
+    />
+  </svg>
+)

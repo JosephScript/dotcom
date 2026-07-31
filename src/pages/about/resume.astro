@@ -1,0 +1,339 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import ResumeTOC from '../../components/Resume-TOC'
+import TerminalPageHeader from '../../components/TerminalPageHeader.astro'
+---
+<Layout>
+  <div class="article-inner">
+    <TerminalPageHeader
+      command="git log --author=joseph --reverse=false"
+      title="Resume of Joseph Andrew Szczesniak"
+    />
+
+    <div class="resume">
+      <ResumeTOC client:load />
+
+      <h2 id="Summary">Summary</h2>
+      <p>
+        I'm an experienced software engineer, technology leader, and
+        fractional CTO who loves architecting, designing, and building
+        modern web and mobile applications. I've worked across fintech,
+        research SaaS, entertainment, and marketing, in both high-compliance
+        environments and fast-moving startups. I create and maintain code
+        standards and style guides, interview and hire developers, and
+        mentor teams to do their best work. I've also spent real time
+        building product features on top of large language models and
+        shaping ML architecture for production systems, not just chasing the
+        buzzword version of AI.
+      </p>
+
+      <h2 id="Technology">Technology</h2>
+      <p>
+        I build full stack web and mobile applications using modern
+        frameworks and tools: TypeScript, React, React Native, Astro, and
+        Node.js (Express, Fastify, NestJS, and serverless on AWS Lambda),
+        plus native iOS (Swift) and Android (Kotlin) when a project calls
+        for it. I've also worked in Deno, Bun, .NET, Rust, and Python, and
+        lean on monorepo tooling like Turborepo and PNPM alongside modern
+        CSS (Grid, Flexbox, Tailwind). I contribute actively to open source
+        on GitHub.
+      </p>
+      <p>
+        I also build web services and APIs, including WebSockets and
+        server-side rendering, and have real-time collaborative editing
+        experience with Tiptap and ProseMirror. I work across a range of
+        databases and ORMs, from PostgreSQL, MySQL, and MongoDB to Redis,
+        DynamoDB, Neo4j, and Firebase, using Prisma, Drizzle, TypeORM,
+        Sequelize, or Mongoose depending on the shape of the data.
+        Comfortable with Test Driven Development (TDD), CI/CD pipelines,
+        Infrastructure as Code (Terraform, Bicep), and cloud platforms (AWS,
+        GCP, Azure, Vercel, Heroku, DigitalOcean), working across Agile,
+        Scrum, and Kanban teams.
+      </p>
+
+      <h2 id="Work-Experience">Work Experience</h2>
+
+      <div class="entry">
+        <p class="dates">Mar 2026 – Present</p>
+        <h3>
+          <a target="_blank" rel="noreferrer" href="https://br-dge.to/">BR-DGE</a>
+          : Full Stack Staff Engineer
+        </h3>
+        <p>
+          Full Stack Staff Engineer working across BR-DGE's payment
+          orchestration platform: the developer-facing Web SDKs (Hosted
+          Fields and Drop-In UI), the Hosted Payment Page, card vaulting and
+          tokenisation, transaction routing, and integrations across
+          hundreds of payment providers. Most of the merchants are gambling
+          and betting operators, with fraud checks, 3-D Secure, risk
+          engines, fast withdrawals, and serious transaction volume to keep
+          running smoothly. Split across CI/CD pipelines, devstack tooling,
+          and release engineering over a large multi-repo codebase. As the most
+          senior engineer on the team, without any direct reports, I set
+          technical direction, review code across the codebase, and mentor
+          other engineers, and I'm usually the one pulled in on the hardest
+          production issues and cross-team technical decisions.
+        </p>
+      </div>
+
+      <div class="entry">
+        <p class="dates">Sept 2025 – Jan 2026</p>
+        <h3>AI-Powered Sales Application: Product Engineer</h3>
+        <p>
+          Product Engineer on an AI platform that analyzes pharmaceutical
+          sales conversations with healthcare providers and turns them into
+          coaching feedback for field reps, built as an offline-first
+          Flutter app with encrypted recordings and a message-queue sync
+          system, plus the enterprise reporting portals and admin
+          applications around it. Reviewed code and coached the dev team
+          building it, with some hands-on IC work of my own. Spent most of
+          my time working directly with end clients and our AI/ML providers
+          on the global launch plan and production scale-up, closed out the
+          final integration work, and drove the architecture and technical
+          design for MLflow and the rest of the ML stack.
+        </p>
+      </div>
+
+      <div class="entry">
+        <p class="dates">Nov 2015 – Present</p>
+        <h3>
+          <a target="_blank" rel="noreferrer" href="https://www.aureliuslab.com">
+            Aurelius Lab, LLC
+          </a>
+          : Co-Founder &amp; Fractional CTO
+        </h3>
+        <p>
+          Co-founded Aurelius and built an AI-powered research platform that
+          helps UX and product research teams (including several Fortune
+          500 companies) run end-to-end studies without the complexity of
+          traditional research tooling. Designed and shipped end-user
+          features powered by large language models, letting researchers
+          extract, analyze, and synthesize insights across user interviews,
+          survey responses, and handwritten notes. I now advise as
+          fractional CTO, keeping architecture and technical direction on
+          track part-time.
+        </p>
+      </div>
+
+      <div class="entry">
+        <p class="dates">Dec 2019 – Aug 2020</p>
+        <h3>
+          <a target="_blank" rel="noreferrer" href="https://www.avantageentertainment.com/">
+            Avantage® Entertainment
+          </a>
+          : Technical Director
+        </h3>
+        <p>Minneapolis, MN</p>
+        <p>
+          Reported directly to the CTO, in charge of multiple development
+          teams and tech efforts. Helped create a scalable infrastructure,
+          managed the developers, and brought standards and practices up to
+          meet high security and auditing needs in preparation for UK
+          Gambling Commission certification, across multiple tech stacks and
+          teams.
+        </p>
+      </div>
+
+      <div class="entry">
+        <p class="dates">Aug 2017 – Nov 2019</p>
+        <h3>
+          <a target="_blank" rel="noreferrer" href="https://home.foodsby.com/">
+            Foodsby
+          </a>
+          : Senior Software Architect and Engineering Manager
+        </h3>
+        <p>Minneapolis, MN</p>
+        <p>
+          Came in as the first FE developer and helped the team scale after
+          Series A: built a CSS/React component framework, migrated the
+          ordering system off a legacy .NET stack onto modernized .NET Core
+          and React, and rebuilt the marketing site and internal admin
+          tools. Partnered with the data science team on genetic
+          algorithms for delivery route optimization. Through Series B, took
+          on more management, mentorship, and higher-level architecture,
+          managing the team responsible for the entire consumer-facing site
+          and apps (including off-shore developers).
+        </p>
+      </div>
+
+      <div class="entry">
+        <p class="dates">Sept 2016 – Aug 2017</p>
+        <h3>
+          <a target="_blank" rel="noreferrer" href="https://www.ameriprise.com/">
+            Ameriprise Financial
+          </a>
+          : Sr. Software Engineering Manager
+        </h3>
+        <p>Minneapolis, MN</p>
+        <p>
+          Managed the Interactive Marketing team's JavaScript and front-end
+          engineers, responsible for all interactive marketing web assets
+          and digital initiatives. Helped develop technical roadmaps
+          spanning legacy systems and new third-party integrations, and led
+          emerging-technology initiatives and code standards.
+        </p>
+      </div>
+
+      <div class="entry">
+        <p class="dates">Apr 2015 – Feb 2016</p>
+        <h3>
+          <a target="_blank" rel="noreferrer" href="https://www.primeacademy.io/">
+            Prime Digital Academy
+          </a>
+          : Software Engineering Instructor and Agile Coach
+        </h3>
+        <p>Minneapolis, MN</p>
+        <p>
+          Taught the next generation of developers using modern
+          technologies, real-world methodology, and hands-on, experiential
+          learning; helped build the school's curriculum.
+        </p>
+      </div>
+
+      <div class="entry">
+        <p class="dates">Sept 2012 – Apr 2015</p>
+        <h3>
+          <a target="_blank" rel="noreferrer" href="https://www.nerdery.com/">
+            The Nerdery
+          </a>
+          : Principal Software Engineer
+        </h3>
+        <p>Minneapolis, MN</p>
+        <p>
+          Designed, coded, and tested software while leading projects
+          directly with clients, teams of developers, Development Managers,
+          Project Managers, and QA leads. Architected everything from
+          internet/extranet sites to enterprise-level solutions for Fortune
+          500 companies. Founded the SharePoint development squad before
+          moving into general .NET and JavaScript work, and was elected
+          head of the .NET Committee, setting development standards and
+          running the interview and hiring process. Shared knowledge with
+          the 200+ developer team through collaboration, peer review, and
+          mentorship, and created documentation, guidelines, and training
+          modules.
+        </p>
+      </div>
+
+      <div class="entry">
+        <p class="dates">Jan 2012 – Sept 2012</p>
+        <h3>
+          <a target="_blank" rel="noreferrer" href="https://www.atomicdata.com/">
+            Atomic Data
+          </a>
+          : Sr. Software Engineer
+        </h3>
+        <p>Minneapolis, MN</p>
+        <p>
+          Worked with a team of developers, testers, and engineers to
+          architect, design, develop, and maintain desktop applications, web
+          interface systems, and custom solutions based on functional
+          requirements. Maintained and monitored large SQL databases and
+          SharePoint server farms.
+        </p>
+      </div>
+
+      <h2 id="Publications-Recognition">Publications &amp; Recognition</h2>
+
+      <div class="entry">
+        <p class="dates">March 2018</p>
+        <h3>Building Apps with Riot</h3>
+        <p>
+          Coauthored this practical guide to building applications with the
+          lightweight Riot JavaScript framework, published by Bleeding Edge
+          Press (ISBN 9781939902504).
+        </p>
+      </div>
+
+      <div class="entry">
+        <h3>Aurelius UX Podcast</h3>
+        <p>Producer and co-host, 70+ episodes on UX research and SaaS strategy.</p>
+      </div>
+
+      <div class="entry">
+        <p class="dates">Spring 2021</p>
+        <h3>TinySeed</h3>
+        <p>
+          Member of the Spring 2021 cohort, a B2B SaaS accelerator for
+          bootstrapped founders.
+        </p>
+      </div>
+
+      <div class="entry">
+        <p class="dates">2020</p>
+        <h3>TechCrunch Disrupt</h3>
+        <p>Selected as a TechCrunch Top Pick.</p>
+      </div>
+
+      <div class="entry">
+        <p class="dates">July 2019</p>
+        <h3>Forrester Research</h3>
+        <p>
+          Featured in "High-Impact Research: The Ingredients For An
+          Effective UX And Design Research Practice."
+        </p>
+      </div>
+
+      <h2 id="Education">Education</h2>
+      <div class="entry">
+        <h3>University of Minnesota</h3>
+        <p>Minneapolis, MN</p>
+        <p>
+          B.S., Mathematics with Specialization in Computer Applications;
+          Minor in Computer Science
+        </p>
+      </div>
+      <div class="entry">
+        <h3>Normandale Community College</h3>
+        <p>Bloomington, MN</p>
+        <p>A.A., Liberal Education with High Honors</p>
+      </div>
+    </div>
+  </div>
+</Layout>
+<style>
+  .article-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 8px;
+  }
+  .article-inner :global(.terminal) {
+    margin-bottom: 32px;
+  }
+  .resume {
+    background-color: var(--surface);
+    border: 1px solid var(--surface-border);
+    border-radius: var(--radius);
+    padding: 32px;
+  }
+  .entry {
+    position: relative;
+    border-left: 2px solid var(--surface-border);
+    padding-left: 20px;
+    margin: 28px 0;
+  }
+  .entry::before {
+    content: '';
+    position: absolute;
+    left: -7px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--js-color);
+    border: 2px solid var(--surface);
+  }
+  .entry .dates {
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin: 0 0 4px 0;
+  }
+  .entry h3 {
+    margin: 0 0 8px 0;
+  }
+  .entry em {
+    color: var(--accent-terminal);
+    font-style: normal;
+    font-size: 0.85rem;
+  }
+</style>
